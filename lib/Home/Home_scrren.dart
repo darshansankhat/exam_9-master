@@ -244,7 +244,9 @@ class _HomeState extends State<Home> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: productList.asMap().entries.map((e) => Product(productList[e.key])).toList(),
+                    children: productList.asMap().entries.map((e) => InkWell(onTap:() {
+                      Navigator.pushNamed(context, "privu",arguments: productList[e.key]);
+                    },child: Product(productList[e.key]))).toList(),
                   ),
                 ),
                 //botam

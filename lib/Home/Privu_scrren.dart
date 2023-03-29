@@ -1,3 +1,4 @@
+import 'package:exam_9/Model_data_class/Model_data.dart';
 import 'package:flutter/material.dart';
 
 class Privu_scrren extends StatefulWidget {
@@ -10,16 +11,15 @@ class Privu_scrren extends StatefulWidget {
 class _Privu_scrrenState extends State<Privu_scrren> {
   @override
   Widget build(BuildContext context) {
-    String m1 = ModalRoute.of(context)!.settings.arguments as String;
-
-    return Scaffold(
+    Item Product = ModalRoute.of(context)!.settings.arguments as Item;
+        return Scaffold(
       appBar: AppBar(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 10),
-            child: Image.asset(m1),
+            child: Image.asset("${Product.img}"),
           ),
           Container(
             height: 450,
